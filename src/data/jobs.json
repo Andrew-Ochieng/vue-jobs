@@ -89,6 +89,21 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
+    },
+    {
+      "id": "09e3",
+      "type": "Part-Time",
+      "title": "Geoffrey Lambert",
+      "slug": "geoffrey-lambert",
+      "description": "Duis temporibus non ",
+      "salary": "$150K - $175K",
+      "location": "Exercitation fugit ",
+      "company": {
+        "name": "Horn York Plc",
+        "description": "Mollit porro qui aut",
+        "contactEmail": "levyvor@mailinator.com",
+        "contactPhone": "+1 (382) 128-6146"
+      }
     }
   ]
 }

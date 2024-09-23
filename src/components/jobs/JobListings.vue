@@ -1,31 +1,27 @@
 <script setup>  
 import { RouterLink } from 'vue-router'
-import axios from 'axios';
 import { onMounted, reactive } from 'vue';
 import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
 
 defineProps({
-    limit: {
-        type: Number,
-    }
+  jobs: {
+      type: Array,
+      required: true
+  },
+  limit: {
+      type: Number,
+      default: null
+  }
 })
 
 const state = reactive({
-    jobs: [],
     isLoading: true
 })
 
 onMounted(async() => {
-    try {
-        const response = await axios.get('/api/jobs')
-        state.jobs = response.data
-        console.log(state.jobs)
-    } catch (error) {
-        console.log(error)
-    } finally {
-        state.isLoading = false
-    }
+  state.isLoading = false
 })
+console.log(state.jobs)
     
 </script>
 
@@ -37,7 +33,7 @@ onMounted(async() => {
 
     <div v-else class="grid grid-cols-1 md:grid-cols-3 gap-6 p-4 rounded-lg">
         <div 
-            v-for="job in state.jobs.slice(0, limit || state.jobs.length)"
+            v-for="job in jobs.slice(0, limit || jobs.length)"
             :key="job.id"
             class="bg-white rounded-xl shadow-md relative">
             <div class="p-4">

@@ -15,6 +15,7 @@
     "pinia": "^2.1.7",
     "primeicons": "^7.0.0",
     "vue": "^3.4.29",
+    "vue-query": "^1.26.0",
     "vue-router": "^4.4.5",
     "vue-spinner": "^1.0.4",
     "vue-toastification": "^2.0.0-rc.5"

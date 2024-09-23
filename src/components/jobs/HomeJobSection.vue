@@ -1,5 +1,8 @@
 <script setup>
+import { getJobs } from "@/app/fetchData";
 import JobListings from "./JobListings.vue";
+
+const { data, isLoading, isError, error } = getJobs();
 
 </script>
 
@@ -10,7 +13,7 @@ import JobListings from "./JobListings.vue";
         <h2 class="text-3xl font-bold text-green-500 mb-6 text-center">
           Browse Jobs
         </h2>
-        <JobListings limit="3" />
+        <JobListings v-if="data" :jobs="data" limit=3 />
         <section class="m-auto max-w-lg my-10 px-6">
             <RouterLink
                 to="/jobs"
